@@ -255,12 +255,16 @@ async fn main() {
         .with_state(state)
         .layer(cors);
 
-    let listener = tokio::net::TcpListener::bind("127.0.0.1:3000")
-        .await
-        .expect("Server bind failed");
+    let port = std::env::var("PORT")
+    .unwrap_or_else(|_| "3000".to_string());
 
-    println!("Loki.cats API: http://127.0.0.1:3000");
+let address = format!("0.0.0.0:{port}");
 
+let listener = tokio::net::TcpListener::bind(&address)
+    .await
+    .expect("Server bind failed");
+
+    println!("Loki.cats API listening on {address}");
     axum::serve(listener, app)
         .await
         .expect("Server error");
