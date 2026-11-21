@@ -197,7 +197,7 @@ fn check_admin(
 
 #[tokio::main]
 async fn main() {
-    dotenvy::dotenv().expect("Failed to load .env");
+    let _ = dotenvy::dotenv();
 
     let database_url =
         std::env::var("DATABASE_URL").expect("DATABASE_URL not found");
