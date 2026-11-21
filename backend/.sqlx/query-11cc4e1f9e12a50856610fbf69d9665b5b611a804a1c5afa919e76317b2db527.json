@@ -1,0 +1,98 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT id, cat_name, name, phone, message, status,\n               created_at AS \"created_at: chrono::DateTime<chrono::Utc>\"\n        FROM adoptions\n        ORDER BY created_at DESC\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Int8",
+        "origin": {
+          "Table": {
+            "table": "adoptions",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "cat_name",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "adoptions",
+            "name": "cat_name"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "name",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "adoptions",
+            "name": "name"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "phone",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "adoptions",
+            "name": "phone"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "message",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "adoptions",
+            "name": "message"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "status",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "adoptions",
+            "name": "status"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "created_at: chrono::DateTime<chrono::Utc>",
+        "type_info": "Timestamptz",
+        "origin": {
+          "Table": {
+            "table": "adoptions",
+            "name": "created_at"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "11cc4e1f9e12a50856610fbf69d9665b5b611a804a1c5afa919e76317b2db527"
+}
